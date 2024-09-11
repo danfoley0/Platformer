@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
 
-const SPEED = 130.0
+const SPEED = 70.0
+const SPRINT_SPEED = 150
 const JUMP_VELOCITY = -300.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -22,7 +23,16 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	#get the input direction: -1, 0 1
 	var direction = Input.get_axis("move_left", "move_right")
+	var is_sprinting = Input.is_action_pressed("sprint")
+	var movement_speed = SPEED
+	var reset = Input.is_action_pressed("reset")
+	if reset:
+		get_tree().reload_current_scene()
 
+	if is_sprinting:
+		movement_speed = SPRINT_SPEED
+	else:
+		movement_speed = SPEED
 	# flip the Sprite
 	if direction > 0:
 		animated_sprite.flip_h = false
@@ -40,8 +50,10 @@ func _physics_process(delta):
 
 	#apply movement
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x = direction * movement_speed
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, movement_speed)
 
 	move_and_slide()
+
+
