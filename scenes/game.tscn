@@ -11,6 +11,8 @@
 [ext_resource type="FontFile" uid="uid://gypl15sj7ati" path="res://assets/fonts/PixelOperator8.ttf" id="7_uy30s"]
 [ext_resource type="Script" path="res://scripts/pause.gd" id="10_08771"]
 [ext_resource type="PackedScene" uid="uid://cup8ofuu3oent" path="res://scenes/jump_slime.tscn" id="11_oaiys"]
+[ext_resource type="PackedScene" uid="uid://dniyxy74u38nu" path="res://scenes/fire.tscn" id="10_w6th8"]
+[ext_resource type="PackedScene" uid="uid://20k54irpwpsw" path="res://scenes/jumpBoost.tscn" id="11_wcwsp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rd48a"]
 texture = ExtResource("2_13lc2")
@@ -355,9 +357,3 @@ text = "Great job!
 "
 horizontal_alignment = 1
 autowrap_mode = 2
-
-[node name="Pause" type="Node" parent="."]
-script = ExtResource("10_08771")
-
-[node name="JumpSlime" parent="." instance=ExtResource("11_oaiys")]
-position = Vector2(535, -116)

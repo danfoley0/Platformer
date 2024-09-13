@@ -10,16 +10,15 @@ const SPRINT_SPEED = 150
 const JUMP_VELOCITY = -300.0
 const MAX_JUMPS = 1  # The maximum number of jumps (1 double jump in addition to the initial jump)
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var jumps_left = MAX_JUMPS  # Tracks how many jumps are left
 
 @onready var animated_sprite = $AnimatedSprite2D
 
 func _physics_process(delta):
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y += gravity * delta
+    # Add the gravity.
+    if not is_on_floor():
+        velocity.y += gravity * delta
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept"):
@@ -52,14 +51,14 @@ func _physics_process(delta):
 	elif direction < 0:
 		animated_sprite.flip_h = true
 
-	#play animations
-	if is_on_floor():
-		if direction == 0:
-			animated_sprite.play("idle")
-		else:
-			animated_sprite.play("run")
-	else:
-		animated_sprite.play("jump")
+    # Play animations
+    if is_on_floor():
+        if direction == 0:
+            animated_sprite.play("idle")
+        else:
+            animated_sprite.play("run")
+    else:
+        animated_sprite.play("jump")
 
 	#apply movement
 	if direction:
