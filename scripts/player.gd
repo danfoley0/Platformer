@@ -23,6 +23,7 @@ func _physics_process(delta):
 	#get the input direction: -1, 0 1
 	var direction = Input.get_axis("move_left", "move_right")
 
+
 	# flip the Sprite
 	if direction > 0:
 		animated_sprite.flip_h = false
