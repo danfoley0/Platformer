@@ -1,0 +1,205 @@
+[gd_scene load_steps=24 format=3 uid="uid://20k54irpwpsw"]
+
+[ext_resource type="Texture2D" uid="uid://j6l2mbesap6q" path="res://assets/sprites/Portals v2/1.png" id="1_3c6cj"]
+[ext_resource type="Script" path="res://scripts/BoostJump.gd" id="1_rdakt"]
+[ext_resource type="Texture2D" uid="uid://bbf4slxlp0u7n" path="res://assets/sprites/Portals v2/2.png" id="2_ttwo3"]
+[ext_resource type="Texture2D" uid="uid://br51xpjhdtcqr" path="res://assets/sprites/Portals v2/3.png" id="3_gihgr"]
+[ext_resource type="AudioStream" uid="uid://djdh6jlrjtbui" path="res://assets/sounds/coin.wav" id="3_jypnd"]
+[ext_resource type="Texture2D" uid="uid://ct06uq4jcqi5w" path="res://assets/sprites/Portals v2/4.png" id="4_541fs"]
+[ext_resource type="Texture2D" uid="uid://bmqlmwsv670ni" path="res://assets/sprites/Portals v2/5.png" id="5_klf4d"]
+[ext_resource type="Texture2D" uid="uid://dro0rd8xmonb3" path="res://assets/sprites/Portals v2/6.png" id="6_oo7md"]
+[ext_resource type="Texture2D" uid="uid://3onjb3b6ibvu" path="res://assets/sprites/Portals v2/7.png" id="7_tcvm6"]
+[ext_resource type="Texture2D" uid="uid://1ut355cjx6cy" path="res://assets/sprites/Portals v2/8.png" id="8_uys4k"]
+[ext_resource type="Texture2D" uid="uid://de3n208cxme5l" path="res://assets/sprites/Portals v2/9.png" id="9_s0jge"]
+[ext_resource type="Texture2D" uid="uid://368t6fw7qavr" path="res://assets/sprites/Portals v2/10.png" id="10_5vfw7"]
+[ext_resource type="Texture2D" uid="uid://co2ohfke2i5b" path="res://assets/sprites/Portals v2/11.png" id="11_eew27"]
+[ext_resource type="Texture2D" uid="uid://c720q17urxjlw" path="res://assets/sprites/Portals v2/12.png" id="12_5j7f2"]
+[ext_resource type="Texture2D" uid="uid://cq5luxh581a5e" path="res://assets/sprites/Portals v2/13.png" id="13_v5eow"]
+[ext_resource type="Texture2D" uid="uid://deenynjy2mg4m" path="res://assets/sprites/Portals v2/14.png" id="14_foh64"]
+[ext_resource type="Texture2D" uid="uid://dv87lwuyerr0f" path="res://assets/sprites/Portals v2/15.png" id="15_nu767"]
+[ext_resource type="Texture2D" uid="uid://bmpoc75qmjncm" path="res://assets/sprites/Portals v2/16.png" id="16_mwwha"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_63mdl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3c6cj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ttwo3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gihgr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_541fs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_klf4d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_oo7md")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_tcvm6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_uys4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_s0jge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5vfw7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_eew27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_5j7f2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_v5eow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_foh64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_nu767")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_mwwha")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_53gqf"]
+radius = 147.105
+
+[sub_resource type="Animation" id="Animation_ow3g4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PickupSound:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_nwq64"]
+resource_name = "pickup"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PickupSound:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n2hl7"]
+_data = {
+"RESET": SubResource("Animation_ow3g4"),
+"pickup": SubResource("Animation_nwq64")
+}
+
+[node name="JumpBoost" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_rdakt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_63mdl")
+autoplay = "default"
+frame = 2
+frame_progress = 0.319481
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_53gqf")
+
+[node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_jypnd")
+bus = &"SFX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_n2hl7")
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
