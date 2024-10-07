@@ -1,0 +1,27 @@
+Team Points:
+  20/20 points for a working platformer with a filled out README
+  15/20 points for having enough sizable changes (4 changes if in a group of 1, 5 changes if in a group of 2, 6 changes if in a group of 3, 8 changes if in a group of 4)
+  -double jump
+  -sprint
+  -reset
+  -pause works, but I had to assign it to a node first
+  -fire is there, but isn't working because your killzones seem to be broken
+
+  -I don't see flying enemies, and jump_slime is the same as slime. Jump boost doesn't work because jump_velocity deson't match JUMP_VELOCITY, which is also a constant.
+
+  8/10 points for following the PR process correctly, including reviewing your teammates’ code (not required for solo projects, instead points will come from having enough changes)
+
+  43/50
+
+Individual Points:
+  10 points for contributing features to your game (no hard carries)
+  -7/10 Dan
+  -6/10 Jerry - cool feature ideas, they just don't work yet
+  -10/10 Gavy
+  -7/10 Amir - let me know if I'm missing the flying enemies
+  5/5 points for thoughtful reflection added in the README
+  5 points for contributing to code reviews in PR’s (not required for solo projects, instead points will come from your reflection)
+  -4/5 Dan
+  -0/5 Jerry
+  -5/5 Gavy
+  -0/5 Amir
